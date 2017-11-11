@@ -1,0 +1,14 @@
+.Todo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid burlywood;
+  padding: 20px;
+}
+
+.Todo__item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid blueviolet;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
