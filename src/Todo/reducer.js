@@ -17,6 +17,10 @@ function todos(state = [], action) {
         { text: todo.text, completed: !todo.completed } :
         todo
    )
+  case 'REMOVE_TODO':
+   const newState = [...state]
+   newState.splice(action.index, 1)
+   return newState
   default:
     return state;
   }
@@ -30,4 +34,12 @@ function visibilityFilter(state = 'SHOW_ALL', action) {
   }
 }
 
-export default combineReducers({ todos, visibilityFilter })
+function newText (state = '', action) {
+  if (action.type === 'CHANGE_NEW_TEXT') {
+    return action.newText
+  } else {
+    return state
+  }
+}
+
+export default combineReducers({ todos, visibilityFilter, newText })

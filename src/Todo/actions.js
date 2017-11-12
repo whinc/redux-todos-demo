@@ -1,8 +1,13 @@
 
 // 新增一个 TODO
-export conost addTodo = text => ({
+export const addTodo = text => ({
   type: 'ADD_TODO',
   text
+})
+
+export const removeTodo = index => ({
+  type: 'REMOVE_TODO',
+  index
 })
 
 // 切换一个 TODO 的完成状态
@@ -15,4 +20,9 @@ export const toggleTodo = index => ({
 export const setVisibilityFilter = filter => ({
   type: 'SET_VISIBILITY_FILTER',
   filter
+})
+
+export const changeNewText = text => ({
+  type: 'CHANGE_NEW_TEXT',
+  newText: text
 })
